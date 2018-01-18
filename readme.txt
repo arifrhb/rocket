@@ -1,0 +1,66 @@
+=== Plugin Name ===
+Contributors: Arif Uddin
+Tags: woocommerce, rocket, Bangladesh, BDT, gateway, custom
+Requires at least: 4.8.0
+Tested up to: 4.9.1
+Stable tag: 0.0.1
+Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Easy to use rocket Payment Gateway for Woocommerce
+
+== Description ==
+
+This is a cool plugin to integrate rocket payment gateway in any woocommerce based website. It is lightweight and very easy to use. 
+
+Please note:
+- This is a woocommerce based plugin so woocommerce plugin must be activated.
+- You must have a rocket account to get payments.
+
+= Using the Plugin =
+
+* Download the plugin, install and active.
+
+* Now go to <strong>WooCommerce</strong> > <strong>Settings</strong> > <strong>rocket</strong>, location URL would be exactly like below -
+
+`
+http://yourwebsite.ext/wp-admin/admin.php?page=wc-settings&tab=checkout&section=sobkichu_rocket
+`
+
+* Now you will see few default setup but you need to fill up rocket account number under <strong>rocket Number</strong> field, also you might adjust other fileds too.
+
+* That's it. You are ready to go!
+
+== Installation ==
+
+You may install the plugin using one of the three following methods:
+
+1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
+2. Then activate the plugin.
+3. Go to woocommerce > settings > checkout > rocket and setup your necessary settings.
+
+
+== Frequently Asked Questions ==
+
+= What is rocket? =
+rocket is a mobile financial service in Bangladesh operating under the authority of Bangladesh Bank as a subsidiary of BRAC Bank Limited.
+
+= Is it Woocommerce dependent plugins? =
+Yes, You must install and active woocommerce plugins to make this plugins work.
+
+= rocket merchant account is necessary? =
+No, it could be personal and agent account.
+
+= Is it secured? =
+100%, Maintained high level validation in both frontend and backend.
+
+
+== Screenshots ==
+
+1. Overview Screenshot
+
+== Changelog ==
+
+= 0.1 =
+* Initial release.
