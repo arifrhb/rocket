@@ -1,24 +1,25 @@
-=== Plugin Name ===
-Contributors: Arif Uddin
-Tags: woocommerce, rocket, dbbl, Bangladesh, BDT, gateway
-Requires at least: 4.8.0
-Tested up to: 4.9.1
-Stable tag: 0.1.1
-Stable tag: trunk
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== Rocket === 
+Contributors: arifrhb 
+Donate link: https://sobkichu.biz/ 
+Tags: woocommerce, rocket, dbbl, Bangladesh, BDT, gateway 
+Requires at least: 4.8.0 
+Tested up to: 4.9.1 
+Requires PHP: 5.2.4 
+Stable tag: 0.1.1 
+License: GPLv2 or later 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
-Easy to use Rocket Payment Gateway for Woocommerce
+Easy to use Rocket Payment Gateway for Woocommerce 
 
-== Description ==
+== Description == 
 
 This is a cool plugin to integrate rocket payment gateway in any woocommerce based website. It is lightweight and very easy to use. 
 
-Please note:
-- This is a woocommerce based plugin so woocommerce plugin must be activated.
-- You must have a rocket account to get payments.
+Please note: 
+- This is a woocommerce based plugin so woocommerce plugin must be activated. 
+- You must have a rocket account to get payments. 
 
-= Using the Plugin =
+= Using the Plugin = 
 
 * Download the plugin, install and active.
 
@@ -63,4 +64,12 @@ No, it could be personal and agent account.
 == Changelog ==
 
 = 0.1.1 =
-* Initial release.
+* Initial release.				
+
+== Upgrade Notice ==
+
+= 0.1.1=
+Make it workable and submit to review.
+
+= 0.0.1 =
+Initially start the plugins
