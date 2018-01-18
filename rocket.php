@@ -2,8 +2,8 @@
 /*
 Plugin Name: Rocket
 Plugin URI:  http://sobkichu.biz 
-Description: Rocket is money transfer system of Bangladesh, lunched by Dutch Bangla Bank. This plugin depends on woocommerce and will provide an extra payment gateway through rocket in checkout page.
-Version:     0.0.1
+Description: Rocket is a money transfer system in Bangladesh, lunched by Dutch-Bangla Bank Ltd. This plugin depends on woocommerce and will provide an extra payment gateway through rocket on checkout page.
+Version:     0.1.1
 Author:      Arif Uddin 
 Author URI:  http://facebook.com/arifrhb
 License:     GPL2
@@ -49,7 +49,7 @@ function sobkichu_rocket_plugin_activation(){
 			$this->title 				= $this->get_option('title', 'Rocket Gateway');
 			$this->description 			= $this->get_option('description', 'Rocket payment Gateway');
 			$this->method_title 		= esc_html__("Rocket", "skr");
-			$this->method_description 	= esc_html__("Rocket Payment Gateway Options", "skr" );
+			$this->method_description 	= esc_html__("Rocket Payment Gateway Options for Personal / Agent Account", "skr" );
 			$this->icon 				= plugins_url('images/rocket.png', __FILE__);
 			$this->has_fields 			= true;
 
@@ -73,7 +73,7 @@ function sobkichu_rocket_plugin_activation(){
 				'enabled' 	=>	array(
 					'title'		=> esc_html__( 'Enable/Disable', "skr" ),
 					'type' 		=> 'checkbox',
-					'label'		=> esc_html__( 'Rocket Payment', "skr" ),
+					'label'		=> esc_html__( 'Enable Rocket Payment', "skr" ),
 					'default'	=> 'yes'
 				),
 				'title' 	=> array(
@@ -97,8 +97,8 @@ function sobkichu_rocket_plugin_activation(){
                     'options'     => wc_get_order_statuses()
                 ),				
 				'rocket_number'	=> array(
-					'title'			=> 'rocket Number',
-					'description' 	=> esc_html__( 'Add a rocket mobile no which will be shown in checkout page', "skr" ),
+					'title'			=> 'Rocket Number',
+					'description' 	=> esc_html__( 'Add a rocket mobile number to show on checkout page', "skr" ),
 					'type'			=> 'text',
 					'desc_tip'      => true
 				),
@@ -114,10 +114,10 @@ function sobkichu_rocket_plugin_activation(){
 					'desc_tip'      => true
 				),
 				'rocket_charge' 	=>	array(
-					'title'			=> esc_html__( 'Enable Rocket Charge', "skr" ),
+					'title'			=> esc_html__( 'Add Rocket Charge', "skr" ),
 					'type' 			=> 'checkbox',
-					'label'			=> esc_html__( 'Add 2% rocket "Send Money" charge to net price', "skr" ),
-					'description' 	=> esc_html__( 'If a product price is 100 then customer have to pay ( 100 + 2 ) = 102. Here 2 is rocket send money charge', "skr" ),
+					'label'			=> esc_html__( 'Add 2% "Cash Out" Charge with net price', "skr" ),
+					'description' 	=> esc_html__( 'If a product price is 100 then customer have to pay ( 100 + 2 ) = 102. Here 2 is Cash Out charge', "skr" ),
 					'default'		=> 'no',
 					'desc_tip'    	=> true
 				),						
@@ -387,7 +387,7 @@ function sobkichu_rocket_admin_column_value($column){
 }
 
 //setting link check up
-function plugin_add_settings_link( $links ) {
+function rocket_settings_link( $links ) {
     $settings_link = '<a href="admin.php?page=wc-settings&tab=checkout&section=sobkichu_rocket">' . __( 'Settings' ) . '</a>';
 	
 	
@@ -395,4 +395,4 @@ function plugin_add_settings_link( $links ) {
   	return $links;
 }
 $plugin = plugin_basename( __FILE__ );
-add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
+add_filter( "plugin_action_links_$plugin", 'rocket_settings_link' );

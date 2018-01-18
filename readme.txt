@@ -1,14 +1,14 @@
 === Plugin Name ===
 Contributors: Arif Uddin
-Tags: woocommerce, rocket, Bangladesh, BDT, gateway, custom
+Tags: woocommerce, rocket, dbbl, Bangladesh, BDT, gateway
 Requires at least: 4.8.0
 Tested up to: 4.9.1
-Stable tag: 0.0.1
+Stable tag: 0.1.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easy to use rocket Payment Gateway for Woocommerce
+Easy to use Rocket Payment Gateway for Woocommerce
 
 == Description ==
 
@@ -22,13 +22,13 @@ Please note:
 
 * Download the plugin, install and active.
 
-* Now go to <strong>WooCommerce</strong> > <strong>Settings</strong> > <strong>rocket</strong>, location URL would be exactly like below -
+*Click on <strong>Settings</strong> or go to <strong>WooCommerce</strong> > <strong>Settings</strong> > <strong>rocket</strong>, location URL would be exactly like below -
 
 `
 http://yourwebsite.ext/wp-admin/admin.php?page=wc-settings&tab=checkout&section=sobkichu_rocket
 `
 
-* Now you will see few default setup but you need to fill up rocket account number under <strong>rocket Number</strong> field, also you might adjust other fileds too.
+* Now you will see few default setup but you need to fill up rocket account number under <strong>Rocket Number</strong> field, also you might adjust other fileds too.
 
 * That's it. You are ready to go!
 
@@ -44,12 +44,12 @@ You may install the plugin using one of the three following methods:
 == Frequently Asked Questions ==
 
 = What is rocket? =
-rocket is a mobile financial service in Bangladesh operating under the authority of Bangladesh Bank as a subsidiary of BRAC Bank Limited.
+Rocket is a mobile financial service in Bangladesh operating under the authority of Bangladesh Bank as a Mobile Banking account of Dutch-Bangla Bank Ltd.
 
 = Is it Woocommerce dependent plugins? =
 Yes, You must install and active woocommerce plugins to make this plugins work.
 
-= rocket merchant account is necessary? =
+= Rocket merchant account is necessary? =
 No, it could be personal and agent account.
 
 = Is it secured? =
@@ -62,5 +62,5 @@ No, it could be personal and agent account.
 
 == Changelog ==
 
-= 0.1 =
+= 0.1.1 =
 * Initial release.
