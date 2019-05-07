@@ -1,21 +1,23 @@
 <?php 
-/*
-Plugin Name: Rocket
-Plugin URI:  http://sobkichu.biz 
-Description: Rocket is a money transfer system in Bangladesh, lunched by Dutch-Bangla Bank Ltd. This plugin depends on woocommerce and will provide an extra payment gateway through rocket on checkout page.
-Version:     0.1.1
-Author:      Arif Uddin 
-Author URI:  http://facebook.com/arifrhb
-License:     GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Domain Path: /languages
-Text Domain: skr
-*/
+/**
+ * Plugin Name: Rocket
+ * Plugin URI:  http://sobkichu.biz 
+ * Description: Rocket is a mobile financial service (MFS) in Bangladesh operating under the authority of Bangladesh Bank as a Mobile Banking account of Dutch-Bangla Bank Ltd. This plugin depends on woo-commerce and will provide an extra payment gateway through rocket on checkout page.
+ * Version:     1.0.0
+ * Author:      Arif Uddin 
+ * Author URI:  http://facebook.com/arifrhb
+ * License:     GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Domain Path: /languages
+ * Text Domain: skr
+ */
+ 
 defined('ABSPATH') or die('do not try to access directly to see the page. :-) ');
 
 /**
  * Plugin language
  */
+ 
 add_action( 'init', 'sobkichu_rocket_language_setup' );
 function sobkichu_rocket_language_setup() {
   load_plugin_textdomain( 'skr', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
@@ -47,9 +49,9 @@ function sobkichu_rocket_plugin_activation(){
 		public function __construct(){
 			$this->id 					= 'sobkichu_rocket';
 			$this->title 				= $this->get_option('title', 'Rocket Gateway');
-			$this->description 			= $this->get_option('description', 'Rocket payment Gateway');
+			$this->description 			= $this->get_option('description', 'Rocket Payment Gateway');
 			$this->method_title 		= esc_html__("Rocket", "skr");
-			$this->method_description 	= esc_html__("Rocket Payment Gateway Options for Personal / Agent Account", "skr" );
+			$this->method_description 	= esc_html__("Rocket Payment Gateway for Personal or Agent Account", "skr" );
 			$this->icon 				= plugins_url('images/rocket.png', __FILE__);
 			$this->has_fields 			= true;
 
@@ -84,7 +86,7 @@ function sobkichu_rocket_plugin_activation(){
 				'description' => array(
 					'title'		=> esc_html__( 'Description', "skr" ),
 					'type' 		=> 'textarea',
-					'default'	=> esc_html__( 'Please at first complete your rocket payment, then try to fill up the form below.', "skr" ),
+					'default'	=> esc_html__( 'At first complete your rocket payment, then try to fill up the form below.', "skr" ),
 					'desc_tip'    => true
 				),
                 'order_status' => array(
@@ -116,7 +118,7 @@ function sobkichu_rocket_plugin_activation(){
 				'rocket_charge' 	=>	array(
 					'title'			=> esc_html__( 'Add Rocket Charge', "skr" ),
 					'type' 			=> 'checkbox',
-					'label'			=> esc_html__( 'Add 2% "Cash Out" Charge with net price', "skr" ),
+					'label'			=> esc_html__( 'Add 1.8% "Cash Out" Charge with net price', "skr" ),
 					'description' 	=> esc_html__( 'If a product price is 100 then customer have to pay ( 100 + 2 ) = 102. Here 2 is Cash Out charge', "skr" ),
 					'default'		=> 'no',
 					'desc_tip'    	=> true
@@ -125,7 +127,7 @@ function sobkichu_rocket_plugin_activation(){
                     'title'       	=> esc_html__( 'Instructions', "skr" ),
                     'type'        	=> 'textarea',
                     'description' 	=> esc_html__( 'Instructions that will be added to the thank you page and emails.', "skr" ),
-                    'default'     	=> esc_html__( 'Thanks for purchasing through rocket. We will check and process as soon as possible.', "skr" ),
+                    'default'     	=> esc_html__( 'Thanks for purchasing through Rocket. We will check and process as soon as possible.', "skr" ),
                     'desc_tip'    	=> true
                 ),								
 			);
@@ -135,7 +137,7 @@ function sobkichu_rocket_plugin_activation(){
 		public function payment_fields(){
 
 			global $woocommerce;
-			$rocket_charge = ($this->rocket_charge == 'yes') ? esc_html__(' Also note that 2% rocket "SEND MONEY" cost will be added with net price. Total amount you need to send us at', "skr" ). ' ' . get_woocommerce_currency_symbol() . $woocommerce->cart->total : '';
+			$rocket_charge = ($this->rocket_charge == 'yes') ? esc_html__(' Also note that 1.8% rocket "SEND MONEY" cost will be added with net price. Total amount you need to send us at', "skr" ). ' ' . get_woocommerce_currency_symbol() . $woocommerce->cart->total : '';
 			echo wpautop( wptexturize( esc_html__( $this->description, "skr" ) ) . $rocket_charge  );
 			echo wpautop( wptexturize( "Rocket ".$this->number_type." Number : ".$this->rocket_number ) );
 
@@ -231,9 +233,9 @@ if( $rocket_charge['rocket_charge'] == 'yes' ){
 				return;
 
 			if ( $current_gateway_id =='sobkichu_rocket' ) {
-				$percentage = 0.02;
+				$percentage = 0.018;
 				$surcharge = ( $woocommerce->cart->cart_contents_total + $woocommerce->cart->shipping_total ) * $percentage;	
-				$woocommerce->cart->add_fee( esc_html__('rocket Charge', 'skr'), $surcharge, true, '' ); 
+				$woocommerce->cart->add_fee( esc_html__('Rocket Charge', 'skr'), $surcharge, true, '' ); 
 			}
 	       
 	    }    	
@@ -312,7 +314,7 @@ function sobkichu_rocket_admin_order_data( $order ){
 		<table class="wp-list-table widefat fixed striped posts">
 			<tbody>
 				<tr>
-					<th><strong><?php esc_html_e('rocket No', 'skr') ;?></strong></th>
+					<th><strong><?php esc_html_e('Rocket No', 'skr') ;?></strong></th>
 					<td>: <?php echo esc_attr( $number );?></td>
 				</tr>
 				<tr>
@@ -340,7 +342,7 @@ function sobkichu_rocket_additional_info_order_review_fields( $order ){
 
 	?>
 		<tr>
-			<th><?php esc_html_e('rocket No:', 'skr');?></th>
+			<th><?php esc_html_e('Rocket No:', 'skr');?></th>
 			<td><?php echo esc_attr( $number );?></td>
 		</tr>
 		<tr>
@@ -359,8 +361,8 @@ function sobkichu_rocket_admin_new_column($columns){
 
     $new_columns = (is_array($columns)) ? $columns : array();
     unset( $new_columns['order_actions'] );
-    $new_columns['mobile_no'] 	= esc_html__('rocket No', 'skr');
-    $new_columns['tran_id'] 	= esc_html__('Tran. ID', 'skr');
+    $new_columns['mobile_no'] 	= esc_html__('Rocket No', 'skr');
+    $new_columns['tran_id'] 	= esc_html__('TXN ID', 'skr');
 
     $new_columns['order_actions'] = $columns['order_actions'];
     return $new_columns;
